@@ -1,0 +1,41 @@
+/* CSS Entry Point */
+
+$border-color: #456;
+$background-color: lighten($border-color, 30%);
+
+// * {
+//   box-sizing: border-box;
+// }
+
+.accordian {
+  border: 2px solid $border-color;
+  width: 500px;
+
+  .bellow {
+    border-bottom: 1px solid $border-color;
+    &:last-child { border-bottom: none }
+
+    h2 {
+      background: $background-color;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+      transition: all 1s;
+      overflow: hidden;
+      max-height: 120px;
+    }
+
+    > * {
+      padding: 5px;
+    }
+
+    &.collapse {
+      p {
+        max-height: 0;
+        padding: 0;
+      }
+    }
+  }
+}
